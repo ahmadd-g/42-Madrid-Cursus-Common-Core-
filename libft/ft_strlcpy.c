@@ -12,33 +12,35 @@
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t	len;
+	size_t	i;
+	size_t	src_len;
 
-	len = 0;
-	if (size)
+	i = 0;
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	if (size != 0)
 	{
-		while (src[len] != '\0' && len < size - 1)
+		while (src[i] && i < size - 1)
 		{
-			dest[len] = src[len];
-			len++;
+			dest[i] = src[i];
+			i++;
 		}
-		
+		dest[i] = '\0';
 	}
-	dest[len] = '\0';
-	while (src[len])
-		len++;
-	return(len);
+	return (src_len);
 }
 
 /* int	main()
 {
 	char src[] = "Hello!";
 	char dst[4];
-	printf("%d\n", ft_strlcpy(dst, src, 4)); // 6
+	printf("%ld\n", ft_strlcpy(dst, src, 4)); // 6
 } */
 
-// Si la logitud de 'src' termina siendo mayor que la de 'size', hubo truncamiento (en este caso sí hubo).
+// Si la logitud de 'src' termina siendo mayor que la de 'size', 
+// hubo truncamiento (en este caso sí hubo).
 // Te devuelve la longitud de 'src'.
 // Copia una cadena 'src' entera y nueva desde cero a 'dest'

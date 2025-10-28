@@ -12,20 +12,18 @@
 
 #include "libft.h"
 
-void	*ft_memset(void	*s, int	c, size_t	n)
+void	*ft_memset(void	*s, int c, size_t n)
 {
-	unsigned char *ptr; // 'unsigned char' es para tomar de referencia la medida de bytes
-	size_t	i;
+	unsigned char	*ptr;
 
 	ptr = s;
-	i = 0;
-	while (i < n)
+	while (n > 0)
 	{
 		*ptr = (unsigned char)c;
 		ptr++;
-		i++;
+		n--;
 	}
-	return(s);
+	return (s);
 }
 
 /* int	main()
@@ -34,3 +32,5 @@ void	*ft_memset(void	*s, int	c, size_t	n)
 	ft_memset(arr, '*', 3);
 	printf("%s\n", arr); // ***lo
 } */
+
+// 'unsigned char' es para tomar de referencia la medida de bytes

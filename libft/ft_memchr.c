@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahgutier <ahgutier@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 14:00:13 by ahgutier          #+#    #+#             */
-/*   Updated: 2025/10/13 14:00:13 by ahgutier         ###   ########.fr       */
+/*   Created: 2025/10/15 19:19:56 by ahgutier          #+#    #+#             */
+/*   Updated: 2025/10/15 19:19:56 by ahgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memchr(const void	*s, int c, size_t	n)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	const unsigned char	*res;
+
+	res = s;
+	if (!s)
+		return (NULL);
+	while (n > 0)
+	{
+		if ((const unsigned char)c == *res)
+			return ((void *)res);
+		res++;
+		n--;
+	}
+	return (NULL);
 }
 
 /* int	main()
 {
-	printf("%c\n", ft_tolower('A')); // a (97)
-	printf("%c\n", ft_tolower('Z')); // z (122)
-	printf("%c\n", ft_tolower('W')); // w (119)
-	printf("%c\n", ft_tolower('a')); // a (97)
+	char	*dominio = "xx@gmail.com";
+	char	*ello = ft_memchr(dominio, '@', ft_strlen(dominio));
+	ello++;
+	printf("%s", ello);
 } */

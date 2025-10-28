@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 {
 	if (n == 0)
 		return (0);
 	while ((*s1) && (*s1 == *s2) && (n))
 	{
-			++s1;
-			++s2;
-			n--;
+		s1++;
+		s2++;
+		n--;
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
@@ -53,5 +52,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	char *arr7;
 	arr6 = "Hola";
 	arr7 = "hold";
-	printf("%d\n", ft_strncmp(arr6, arr7, 5)); // -32 (La mayúsucula está 32 posiciones ASCII por delante)
+	printf("%d\n", ft_strncmp(arr6, arr7, 5)); 
+	// -32 (La mayúsucula está 32 posiciones ASCII por delante)
 } */

@@ -12,4 +12,25 @@
 
 #include "libft.h"
 
+char	*strrchr(const char	*s, int c)
+{
+	const char	*ptr;
+	const char	*last;
 
+	ptr = (char *)s;
+	last = NULL;
+	while (*ptr)
+	{
+		if (*ptr == (char)c)
+			last = ptr;
+		ptr++;
+	}
+	ptr = '\0';
+	return ((char *)last);
+}
+
+/* int	main()
+{
+	char	*ss = strrchr("hola@correo.com", '.');
+	printf("%s", ss);
+} */

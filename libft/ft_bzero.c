@@ -17,10 +17,11 @@ void	ft_bzero(void	*s, size_t	n)
 	unsigned char	*ptr;
 
 	ptr = s;
-	while (n--)
+	while (n > 0)
 	{
 		*ptr = 0;
 		ptr++;
+		n--;
 	}
 }
 
@@ -30,3 +31,6 @@ void	ft_bzero(void	*s, size_t	n)
 	ft_bzero(arr, 3);
 	printf("%s\n", arr);
 } */
+
+// Ponemos 'while (n > 0)' y no 'while (n--)'
+// porque es de tipo 'size_t' y evita el desbordamiento de 'n'

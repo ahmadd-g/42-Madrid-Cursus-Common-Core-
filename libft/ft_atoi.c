@@ -36,7 +36,7 @@ int	ft_atoi(const char	*str)
 	if (signo > 1)
 		return (0);
 	else if (signo == 1)
-		return -(num);
+		return (-num);
 	else
 		return (num);
 }

@@ -20,21 +20,21 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 	d = dest;
 	s = src;
 	if (!d || !s)
-		return NULL;
+		return (NULL);
 	if (d > s)
 		while (n--)
 			d[n] = s[n];
 	else
 	{
-		while(n--)
+		while (n--)
 			*d++ = *s++;
 	}
-	return(dest);
+	return (dest);
 }
 
-int	main()
+/* int	main()
 {
 	char str[] = "HelloWorld";
 	ft_memmove(str + 2, str, 5);
 	printf("%s\n", str);
-}
+} */
