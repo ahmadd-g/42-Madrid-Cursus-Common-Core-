@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_bezerou(void	*str, size_t	size)
+static void	ft_bezerou(void	*str, size_t	size)
 {
 	unsigned char	*ptr;
 
@@ -23,14 +23,17 @@ static char	*ft_bezerou(void	*str, size_t	size)
 		ptr++;
 		size--;
 	}
-	return (str);
 }
 
 void	*ft_calloc(size_t	nmemb, size_t	size)
 {
 	void	*res;
 
+	if (nmemb && size && nmemb > (SIZE_MAX / size))
+		return (NULL);
 	res = malloc(nmemb * size);
+	if (!res)
+		return (NULL);
 	ft_bezerou(res, nmemb * size);
 	return (res);
 }

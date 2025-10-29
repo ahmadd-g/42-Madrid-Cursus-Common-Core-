@@ -12,22 +12,30 @@
 
 #include "libft.h"
 
-static size_t	ft_slen(char const	*s)
+static size_t	ft_slen(const char *s)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	while (*s++)
+	if (!s)
+		return (0);
+	while (s[len])
 		len++;
 	return (len);
 }
 
-char	*ft_strjoin(char const	*s1, char const	*s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	len1;
+	size_t	len2;
 	char	*new_str;
 	char	*ptr;
 
-	new_str = malloc(ft_slen(s1) + ft_slen(s2) + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_slen(s1);
+	len2 = ft_slen(s2);
+	new_str = malloc(len1 + len2 + 1);
 	if (!new_str)
 		return (NULL);
 	ptr = new_str;

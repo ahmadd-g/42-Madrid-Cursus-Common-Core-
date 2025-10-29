@@ -17,8 +17,6 @@ void	*ft_memchr(const void	*s, int c, size_t	n)
 	const unsigned char	*res;
 
 	res = s;
-	if (!s)
-		return (NULL);
 	while (n > 0)
 	{
 		if ((const unsigned char)c == *res)
@@ -36,3 +34,8 @@ void	*ft_memchr(const void	*s, int c, size_t	n)
 	ello++;
 	printf("%s", ello);
 } */
+
+/*
+	if (!s)
+		return (NULL);
+*/

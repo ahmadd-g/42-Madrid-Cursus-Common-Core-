@@ -12,20 +12,23 @@
 
 #include "libft.h"
 
-char	*strrchr(const char	*s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	const char	*ptr;
 	const char	*last;
+	char		ch;
 
-	ptr = (char *)s;
+	ch = (char)c;
+	ptr = s;
 	last = NULL;
 	while (*ptr)
 	{
-		if (*ptr == (char)c)
+		if (*ptr == ch)
 			last = ptr;
 		ptr++;
 	}
-	ptr = '\0';
+	if (ch == '\0')
+		return ((char *)ptr);
 	return ((char *)last);
 }
 
@@ -34,3 +37,5 @@ char	*strrchr(const char	*s, int c)
 	char	*ss = strrchr("hola@correo.com", '.');
 	printf("%s", ss);
 } */
+
+// return ((char *)ptr); /* ptr apunta al '\0' al salir del bucle */
