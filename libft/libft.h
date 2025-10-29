@@ -56,3 +56,8 @@ char	*ft_strtrim(char const	*s1, char const	*set);
 char	**ft_split(char const	*s, char c);
 
 // Opcionales / Bonus
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
