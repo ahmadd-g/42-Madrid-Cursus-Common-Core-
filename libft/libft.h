@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+#include <stdint.h>
 
 // NO funciones autorizadas
 int		ft_isalpha(int c);
