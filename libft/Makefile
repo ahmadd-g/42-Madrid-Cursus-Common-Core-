@@ -18,8 +18,12 @@ SRCS	= ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 		  ft_memchr.c ft_memcmp.c ft_calloc.c ft_strdup.c ft_substr.c \
 		  ft_split.c ft_strmapi.c ft_striteri.c ft_itoa.c
 
+# Parte bonus (listas)
+BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c ft_lstlast.c
+
 # Archivos objeto (.o)
 OBJS	= $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 # -------------------- #
 #      COMPILATION     #
@@ -32,6 +36,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
+# Compila archivos extra opcionales sin afectar la compilación normal
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
 # Compila cada .c en su correspondiente .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -42,7 +50,7 @@ $(NAME): $(OBJS)
 
 # Borra archivos .o
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 # Borra todo, incluida la librería o archivo programa
 fclean: clean
@@ -50,10 +58,6 @@ fclean: clean
 
 # Limpia y recompila
 re: fclean all
-
-# Compila archivos extra opcionales sin afectar la compilación normal
-bonus:
-	@echo "Wait till I do the bonus part"
 
 # .PHONY: indica que la/s regla/s no representa/n un archivo real
 .PHONY: all clean fclean re bonus
