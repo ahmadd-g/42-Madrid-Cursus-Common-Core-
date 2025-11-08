@@ -38,3 +38,28 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	ft_striteri(hum, to_lower_even);
 	printf("%s", hum); // hOlaa
 } */
+
+// Con punterines:
+/* int  main()
+{
+   char    hum[] = "HOlaa";
+   ft_striteri(hum, to_lower_even);
+   printf("%s", hum); // hOlaa
+} */
+
+/*
+void    ft_striteri(char *s, void (*f)(char *))
+{
+   unsigned int    i;
+
+
+   if (!s || !f)
+       return ;
+   i = 0;
+   while (*s)
+   {
+       f(s);
+       s++;
+   }
+}
+*/

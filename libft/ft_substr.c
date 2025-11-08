@@ -22,23 +22,24 @@ static size_t	ft_slen(char const	*s)
 	return (len);
 }
 
-char	*ft_substr(char const	*s, unsigned int start, size_t	len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
+	size_t	slen;
 
 	if (!s)
 		return (NULL);
+	slen = ft_slen(s);
+	if (start >= slen)
+		len = 0;
+	else if (len > slen - start)
+		len = slen - start;
 	sub = malloc(len + 1);
 	if (!sub)
 		return (NULL);
-	if (start >= ft_slen(s))
-	{
-		sub[0] = '\0';
-		return (sub);
-	}
 	i = 0;
-	while (i < len && s[start + i] != '\0')
+	while (i < len && s[start + i])
 	{
 		sub[i] = s[start + i];
 		i++;
