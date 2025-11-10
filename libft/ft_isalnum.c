@@ -15,10 +15,8 @@
 
 int	ft_isalnum(int c)
 {
-	if ((((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-			|| (c >= '0' && c <= '9')) || (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	return ((((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+			|| (c >= '0' && c <= '9')) || (c >= '0' && c <= '9'));
 }
 
 // es lo mismo que '(ft_isalpha(c) || ft_isdigit(c))'
@@ -29,3 +27,14 @@ int	ft_isalnum(int c)
 // 	printf("%d\n", ft_isalnum(54));
 // 	printf("%d\n", ft_isalnum(23));
 // }
+
+// Lo mismo:
+/*
+int	ft_isalnum(int c)
+{
+	if ((((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+			|| (c >= '0' && c <= '9')) || (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
+}
+*/

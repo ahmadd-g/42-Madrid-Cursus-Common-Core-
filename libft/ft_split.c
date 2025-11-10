@@ -207,3 +207,5 @@ static char	*ft_slcpy(char *dest, char const *src, size_t size)
 	return (dest);
 }
 */
+
+// DISCLAIMER: esta función no es efectiva ante el idioma alemán
